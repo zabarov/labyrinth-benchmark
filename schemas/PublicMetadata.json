@@ -1,0 +1,16 @@
+{
+  "$schema":"http://json-schema.org/draft-07/schema#","title":"PublicMetadata","type":"object","additionalProperties":false,
+  "required":["contract_version","config_digest","benchmark_commit","participants"],
+  "properties":{
+    "contract_version":{"const":"1.0.0"},
+    "config_digest":{"type":"string","pattern":"^sha256:[a-f0-9]{64}$"},
+    "benchmark_commit":{"type":"string","pattern":"^[a-f0-9]{40}$"},
+    "participants":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,
+      "required":["id","model","commit","version"],"properties":{
+        "id":{"type":"string","pattern":"^[A-Za-z0-9_-]{1,64}$"},
+        "model":{"type":["string","null"],"maxLength":160,"pattern":"^[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+        "commit":{"type":"string","pattern":"^[a-f0-9]{40}$"},
+        "version":{"type":["string","null"],"pattern":"^[0-9]+\\.[0-9]+\\.[0-9]+(?:-[A-Za-z0-9.-]+)?$"}
+      }}}
+  }
+}

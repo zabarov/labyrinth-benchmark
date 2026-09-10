@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ParticipantManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "api_dialect":{"enum":["chat_completions","chat_completions_reasoning"]},
+    "reasoning_effort":{"enum":["none","low","medium","high"]},
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{1,64}$"
+    },
+    "kind": {
+      "enum": [
+        "recorded",
+        "openai",
+        "process",
+        "mirai"
+      ]
+    },
+    "model": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "key_env": {
+      "type": "string"
+    },
+    "command": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1
+    },
+    "module": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "commit": {
+      "type": "string"
+    },
+    "memory": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "contract_version",
+    "id",
+    "kind",
+    "model",
+    "commit",
+    "memory"
+  ]
+}

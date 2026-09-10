@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+output/
+.cache/
+source/
+__pycache__/
+*.pyc
+*.tgz
+*.bak
+*.bak_*
+*.bak-*
+*.codex-bak-*

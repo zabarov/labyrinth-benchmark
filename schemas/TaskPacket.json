@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TaskPacket",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "result_contract": {"const":"TrialResult@1.0.0"},
+    "constraints": {"const":["full_trace_required","integer_state","revoked_access_no_disclosure"]},
+    "contract_version": {
+      "const": "1.0.0"
+    },
+    "task_id": {
+      "type": "string"
+    },
+    "source_text": {
+      "type": "string",
+      "maxLength": 1000000
+    },
+    "source_digest": {
+      "type": "string"
+    },
+    "goal": {
+      "enum": [
+        "final_state",
+        "left_count"
+      ]
+    },
+    "length": {
+      "enum": [
+        10,
+        100,
+        1000
+      ]
+    },
+    "phase": {
+      "enum": [
+        "cold",
+        "unchanged",
+        "source_edit",
+        "goal_change",
+        "new_scope",
+        "revoked_access"
+      ]
+    },
+    "scope": {
+      "type": "string"
+    },
+    "access": {
+      "enum": [
+        "allowed",
+        "revoked"
+      ]
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "python"
+        ]
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "result_contract",
+    "constraints",
+    "contract_version",
+    "task_id",
+    "source_text",
+    "source_digest",
+    "goal",
+    "length",
+    "phase",
+    "scope",
+    "access",
+    "tools"
+  ]
+}

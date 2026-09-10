@@ -1,0 +1,7 @@
+{
+  "contract_version":"1.0.0","corpus":"output/corpus",
+  "participants":[{"contract_version":"1.0.0","id":"recorded","kind":"recorded","model":null,"commit":"recorded-demo","memory":true,"module":"output/recordings.json"}],
+  "track":"memory_change","mode":"system_bundle","repeats":1,"lengths":[10],"seeds":["1"],
+  "budget":{"calls":3,"input_tokens":100000,"output_tokens":10000,"cost_usd":0,"deadline_ms":30000,"input_per_million":0,"output_per_million":0,"unknown_call_ceiling_usd":null},
+  "live":false,"permitted_data":"synthetic-only","routing":"fixed"
+}

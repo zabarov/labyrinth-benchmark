@@ -1,0 +1,17 @@
+{
+  "name": "labyrinth-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": { "node": ">=22" },
+  "bin": { "labyrinth": "dist/cli.js" },
+  "exports": { ".": "./dist/index.js" },
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && node --test test/*.test.mjs",
+    "labyrinth": "node dist/cli.js"
+  },
+  "dependencies": { "ajv": "8.20.0" },
+  "devDependencies": { "@types/node": "22.19.0", "typescript": "5.9.3" }
+}

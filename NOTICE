@@ -1,0 +1,13 @@
+Labyrinth Benchmark
+Copyright 2026 Rim Zabarov
+
+Original benchmark code and generated synthetic corpus are licensed under Apache-2.0.
+Provider services, model weights, participant packages and third-party dependencies
+retain their own licenses. No model weights or credentials are distributed.
+
+The legacy maze semantics and portions of the generator/scoring design originate
+in the author's science repository, commit
+d9b81381f37ddb34609c7b214b674aba5fe0a35d.
+Source: projects/2026-012-mirai-cognitive-kernel/working-memory/corpus.mjs
+Independent interpreter reference: working-memory/text_oracle.py.
+The new generator, SDK and execution harness are separate from Mirai Runtime.

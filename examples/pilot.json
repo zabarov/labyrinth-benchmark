@@ -1,0 +1,11 @@
+{
+  "contract_version":"1.0.0","corpus":"output/pilot-corpus",
+  "participants":[
+    {"contract_version":"1.0.0","id":"plain-fixed","kind":"openai","model":"REPLACE_WITH_PINNED_MODEL","commit":"REPLACE_WITH_PARTICIPANT_COMMIT","memory":false,"endpoint":"https://example.invalid/v1/chat/completions","key_env":"LABYRINTH_API_KEY"},
+    {"contract_version":"1.0.0","id":"mirai-no-memory","kind":"mirai","model":"REPLACE_WITH_PINNED_MODEL","commit":"REPLACE_WITH_PARTICIPANT_COMMIT","memory":false,"version":"2.6.0-alpha.1","module":"examples/mirai-host.mjs","endpoint":"https://example.invalid/v1/chat/completions","key_env":"LABYRINTH_API_KEY"},
+    {"contract_version":"1.0.0","id":"mirai-memory","kind":"mirai","model":"REPLACE_WITH_PINNED_MODEL","commit":"REPLACE_WITH_PARTICIPANT_COMMIT","memory":true,"version":"2.6.0-alpha.1","module":"examples/mirai-host.mjs","endpoint":"https://example.invalid/v1/chat/completions","key_env":"LABYRINTH_API_KEY"}
+  ],
+  "track":"memory_change","mode":"system_bundle","repeats":3,"lengths":[10,100,1000],"seeds":["1","2","3","4","5","6","7","8","9","10"],
+  "budget":{"calls":6,"input_tokens":1000000,"output_tokens":100000,"cost_usd":0,"deadline_ms":600000,"input_per_million":null,"output_per_million":null,"unknown_call_ceiling_usd":null},
+  "live":false,"permitted_data":"synthetic-only","routing":"fixed"
+}

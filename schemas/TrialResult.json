@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TrialResult",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "enum": [
+        "completed",
+        "blocked",
+        "failed"
+      ]
+    },
+    "value": {
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "trace": {
+      "type": "array",
+      "maxItems": 1000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "node": {
+            "type": "string"
+          },
+          "before": {
+            "type": "integer"
+          },
+          "after": {
+            "type": "integer"
+          },
+          "branch": {
+            "enum": [
+              "L",
+              "C",
+              "R"
+            ]
+          }
+        },
+        "required": [
+          "node",
+          "before",
+          "after",
+          "branch"
+        ]
+      }
+    }
+  },
+  "required": [
+    "status",
+    "value",
+    "trace"
+  ]
+}
